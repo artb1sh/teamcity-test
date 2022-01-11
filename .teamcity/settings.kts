@@ -28,6 +28,7 @@ version = "2021.2"
 
 project {
 
+    vcsRoot(Playwright)
     vcsRoot(HttpsGithubComNodejsNodejsOrgRefsHeadsMain)
 
     buildType(Nodejs)
@@ -67,5 +68,11 @@ object Nodejs : BuildType({
 object HttpsGithubComNodejsNodejsOrgRefsHeadsMain : GitVcsRoot({
     name = "https://github.com/nodejs/nodejs.org#refs/heads/main"
     url = "https://github.com/nodejs/nodejs.org"
+    branch = "refs/heads/main"
+})
+
+object Playwright : GitVcsRoot({
+    name = "playwright"
+    url = "https://github.com/thenishant/playwright-teamcity.git"
     branch = "refs/heads/main"
 })
