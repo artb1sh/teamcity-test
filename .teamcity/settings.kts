@@ -51,7 +51,7 @@ object Nodejs : BuildType({
 
     steps {
         nodeJS {
-            shellScript = "npm ci"
+            shellScript = "npm i"
         }
         nodeJS {
             shellScript = """
