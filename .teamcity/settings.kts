@@ -50,7 +50,7 @@ object Nodejs : BuildType({
 
     steps {
         nodeJS {
-            shellScript = "npm ci"
+            shellScript = "npm install"
         }
         nodeJS {
             shellScript = """
