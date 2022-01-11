@@ -25,4 +25,10 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2021.2"
 
 project {
+
+    buildType(Nodejs)
 }
+
+object Nodejs : BuildType({
+    name = "nodejs"
+})
