@@ -51,7 +51,10 @@ object Nodejs : BuildType({
 
     steps {
         nodeJS {
-            shellScript = "npm install --force"
+            shellScript = """
+                npm install --force
+                npm test
+            """.trimIndent()
             dockerImage = "mcr.microsoft.com/playwright"
         }
         nodeJS {
