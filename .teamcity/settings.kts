@@ -44,10 +44,6 @@ object Nodejs : BuildType({
     """.trimIndent()
     publishArtifacts = PublishMode.ALWAYS
 
-    vcs {
-        root(HttpsGithubComNodejsNodejsOrgRefsHeadsMain)
-    }
-
     steps {
         nodeJS {
             shellScript = "npm ci"
