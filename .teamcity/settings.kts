@@ -34,6 +34,10 @@ project {
 
 object Nodejs : BuildType({
     name = "nodejs"
+
+    vcs {
+        root(HttpsGithubComNodejsNodejsOrgRefsHeadsMain)
+    }
 })
 
 object HttpsGithubComNodejsNodejsOrgRefsHeadsMain : GitVcsRoot({
