@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.nodeJS
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 /*
@@ -37,6 +38,21 @@ object Nodejs : BuildType({
 
     vcs {
         root(HttpsGithubComNodejsNodejsOrgRefsHeadsMain)
+    }
+
+    steps {
+        nodeJS {
+            shellScript = "npm ci"
+        }
+        nodeJS {
+            shellScript = """
+                npm install eslint-teamcity --no-save
+                npm run test:lint:js -- --format ./node_modules/eslint-teamcity/index.js
+            """.trimIndent()
+        }
+        nodeJS {
+            shellScript = "npm run test"
+        }
     }
 })
 
