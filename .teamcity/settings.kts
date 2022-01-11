@@ -58,6 +58,7 @@ object Nodejs : BuildType({
             """.trimIndent()
         }
         nodeJS {
+            enabled = false
             shellScript = "npm run test"
         }
     }
