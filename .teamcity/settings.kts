@@ -36,6 +36,13 @@ project {
 object Nodejs : BuildType({
     name = "nodejs"
 
+    artifactRules = """
+        jest-html-reporters-attach => jest-html-reporters-attach
+        report.html
+        src/html-report => src/html-report
+    """.trimIndent()
+    publishArtifacts = PublishMode.ALWAYS
+
     vcs {
         root(HttpsGithubComNodejsNodejsOrgRefsHeadsMain)
     }
