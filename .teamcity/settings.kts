@@ -45,10 +45,6 @@ object Nodejs : BuildType({
     """.trimIndent()
     publishArtifacts = PublishMode.ALWAYS
 
-    vcs {
-        root(Playwright)
-    }
-
     steps {
         nodeJS {
             shellScript = "npm install"
