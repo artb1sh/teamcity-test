@@ -30,6 +30,7 @@ project {
 
     vcsRoot(Playwright)
     vcsRoot(HttpsGithubComNodejsNodejsOrgRefsHeadsMain)
+    vcsRoot(HttpsGithubComArtb1shPlaywrightTeamcityRefsHeadsMain)
 
     buildType(Nodejs)
 }
@@ -62,6 +63,16 @@ object Nodejs : BuildType({
             enabled = false
             shellScript = "npm run test"
         }
+    }
+})
+
+object HttpsGithubComArtb1shPlaywrightTeamcityRefsHeadsMain : GitVcsRoot({
+    name = "https://github.com/artb1sh/playwright-teamcity#refs/heads/main"
+    url = "https://github.com/artb1sh/playwright-teamcity"
+    branch = "refs/heads/main"
+    authMethod = password {
+        userName = "artb1sh"
+        password = "credentialsJSON:93d6c368-5feb-45bc-9b7e-04dc408d3520"
     }
 })
 
