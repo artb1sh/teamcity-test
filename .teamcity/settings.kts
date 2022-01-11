@@ -51,7 +51,7 @@ object Nodejs : BuildType({
 
     steps {
         nodeJS {
-            shellScript = "npm install --package-lock"
+            shellScript = "npm install --force"
         }
         nodeJS {
             shellScript = """
