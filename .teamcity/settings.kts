@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -26,9 +27,17 @@ version = "2021.2"
 
 project {
 
+    vcsRoot(HttpsGithubComNodejsNodejsOrgRefsHeadsMain)
+
     buildType(Nodejs)
 }
 
 object Nodejs : BuildType({
     name = "nodejs"
+})
+
+object HttpsGithubComNodejsNodejsOrgRefsHeadsMain : GitVcsRoot({
+    name = "https://github.com/nodejs/nodejs.org#refs/heads/main"
+    url = "https://github.com/nodejs/nodejs.org"
+    branch = "refs/heads/main"
 })
