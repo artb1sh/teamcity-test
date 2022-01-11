@@ -55,6 +55,7 @@ object Nodejs : BuildType({
             dockerImage = "mcr.microsoft.com/playwright"
         }
         nodeJS {
+            enabled = false
             shellScript = """
                 npm install eslint-teamcity --no-save
                 npm run test:lint:js -- --format ./node_modules/eslint-teamcity/index.js
